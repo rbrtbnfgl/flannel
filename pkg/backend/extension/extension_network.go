@@ -18,6 +18,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"strings"
 	"sync"
 
 	"github.com/flannel-io/flannel/pkg/backend"
@@ -88,11 +89,12 @@ func (n *network) handleSubnetEvents(batch []lease.Event) {
 					}
 				}
 
+				addArgs := strings.Fields(n.subnetAddCommand)
 				cmd_output, err := runCmd([]string{
 					fmt.Sprintf("SUBNET=%s", evt.Lease.Subnet),
 					fmt.Sprintf("PUBLIC_IP=%s", evt.Lease.Attrs.PublicIP)},
 					backendData,
-					"sh", "-c", n.subnetAddCommand)
+					addArgs[0], addArgs[1:]...)
 
 				if err != nil {
 					log.Errorf("failed to run command: %s Err: %v Output: %s", n.subnetAddCommand, err, cmd_output)
@@ -118,11 +120,12 @@ func (n *network) handleSubnetEvents(batch []lease.Event) {
 						continue
 					}
 				}
+				removeArgs := strings.Fields(n.subnetRemoveCommand)
 				cmd_output, err := runCmd([]string{
 					fmt.Sprintf("SUBNET=%s", evt.Lease.Subnet),
 					fmt.Sprintf("PUBLIC_IP=%s", evt.Lease.Attrs.PublicIP)},
 					backendData,
-					"sh", "-c", n.subnetRemoveCommand)
+					removeArgs[0], removeArgs[1:]...)
 
 				if err != nil {
 					log.Errorf("failed to run command: %s Err: %v Output: %s", n.subnetRemoveCommand, err, cmd_output)
