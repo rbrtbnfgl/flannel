@@ -1,9 +1,17 @@
 # How to Contribute
 
-CoreOS projects are [Apache 2.0 licensed](LICENSE) and accept contributions via
-GitHub pull requests.  This document outlines some of the conventions on
-development workflow, commit message formatting, contact points and other
+Flannel is [Apache 2.0 licensed](LICENSE) and accepts contributions via
+GitHub pull requests. This document outlines conventions on
+development workflow, commit message formatting, contact points, and other
 resources to make it easier to get your contribution accepted.
+
+## Community
+
+- **Community meetings:** 3rd Thursday of each month at 8:30 AM PST — [Meeting Agenda](https://docs.google.com/document/d/1kPMMFDhljWL8_CUZajrfL8Q9sdntd9vvUpe-UGhX5z8)
+- **Slack:** `#flannel-users` on [Calico Slack](https://calicousers.slack.com) and `#k3s` on [Rancher Slack](https://slack.rancher.io)
+- **Issues:** [https://github.com/flannel-io/flannel/issues](https://github.com/flannel-io/flannel/issues)
+- **Code of Conduct:** [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md)
+- **Governance:** [GOVERNANCE.md](GOVERNANCE.md)
 
 # Certificate of Origin
 
