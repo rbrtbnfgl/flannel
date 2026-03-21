@@ -91,7 +91,7 @@ flannel is also widely used outside of Kubernetes. When deployed outside of Kube
 - Slack:
   - #k3s on [Rancher Users Slack](https://slack.rancher.io)
   - #flannel-users on [Calico Users Slack](https://slack.projectcalico.org)
-- Planning/Roadmap: [milestones][milestones], [roadmap][roadmap]
+- Planning/Roadmap: [ROADMAP.md][roadmap], [milestones][milestones]
 - Bugs: [issues][flannel-issues]
 
 ## Community Meeting
@@ -121,7 +121,7 @@ Flannel is under the Apache 2.0 license. See the [LICENSE][license] file for det
 [milestones]: https://github.com/flannel-io/flannel/milestones
 [flannel-issues]: https://github.com/flannel-io/flannel/issues
 [backends]: Documentation/backends.md
-[roadmap]: https://github.com/kubernetes/kubernetes/milestones
+[roadmap]: ROADMAP.md
 [reporting]: Documentation/reporting_bugs.md
 [k3s-installer]: https://github.com/k3s-io/k3s/#quick-start---install-script
 [k3s]: https://k3s.io/
