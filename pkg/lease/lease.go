@@ -85,8 +85,9 @@ func (la *LeaseAttrs) String() string {
 		j, err := json.Marshal(la.BackendData)
 		if err != nil {
 			buffer.WriteString("BackendData: (nil), ")
+		} else {
+			buffer.WriteString(fmt.Sprintf("BackendData: %s, ", string(j)))
 		}
-		buffer.WriteString(fmt.Sprintf("BackendData: %s, ", string(j)))
 	} else {
 		buffer.WriteString("BackendData: (nil), ")
 	}
@@ -94,8 +95,9 @@ func (la *LeaseAttrs) String() string {
 		j, err := json.Marshal(la.BackendV6Data)
 		if err != nil {
 			buffer.WriteString("BackendV6Data: (nil)")
+		} else {
+			buffer.WriteString(fmt.Sprintf("BackendV6Data: %s", string(j)))
 		}
-		buffer.WriteString(fmt.Sprintf("BackendV6Data: %s", string(j)))
 	} else {
 		buffer.WriteString("BackendV6Data: (nil)")
 	}
