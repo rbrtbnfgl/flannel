@@ -147,6 +147,17 @@ func init() {
 		os.Exit(1)
 	}
 
+	// Opt into the fixed klog behavior so the --stderrthreshold flag is honored
+	// even when --logtostderr is enabled. See https://github.com/kubernetes/klog/issues/432
+	if err := flag.Set("legacy_stderr_threshold_behavior", "false"); err != nil {
+		log.Error("Can't set the legacy_stderr_threshold_behavior flag", err)
+		os.Exit(1)
+	}
+	if err := flag.Set("stderrthreshold", "INFO"); err != nil {
+		log.Error("Can't set the stderrthreshold flag", err)
+		os.Exit(1)
+	}
+
 	// Only copy the non file logging options from klog
 	copyFlag("v")
 	copyFlag("vmodule")
