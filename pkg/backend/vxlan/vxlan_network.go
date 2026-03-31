@@ -482,7 +482,7 @@ func (nw *network) handleSubnetEvents(batch []lease.Event) {
 				if v6DirectRoutingOK {
 					log.V(2).Infof("Removing v6 direct route to subnet: %s PublicIP: %s", sn, attrs.PublicIPv6)
 					if err := retry.Do(func() error {
-						return netlink.RouteDel(&directRoute)
+						return netlink.RouteDel(&v6DirectRoute)
 					}); err != nil {
 						log.Errorf("Error deleting v6 route to %v via %v: %v", v6Sn, attrs.PublicIPv6, err)
 					}
